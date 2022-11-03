@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magic ball</title>
+        <link rel="stylesheet" href="css/normalize.css">    
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header-container flex">
+                <nav class="header__nav">
+                    <ul class="header__list flex">
+                        <li class="header__item">
+                            <a class="header__link" tabindex="0">О программе</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link accordion" tabindex="0">Звук</button>
+                            <div class="panel">
+                                <ul class="switch">
+                                    <li class="switch__item">
+                                        <a class="switch__item--on">ON</a>
+                                    </li>
+                                    <li class="switch__item">
+                                        <a class="switch__item--off">OF</a>
+                                    </li>
+                                </ul>
+                            </div>  
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link accordion" tabindex="0">Цветовая схема</a>
+                            <div class="panel">
+                                <ul class="switch">
+                                    <li class="switch__item">
+                                        <a class="switch__item--man" onClick="document.bgColor='#888'">Пацантрэ</a>
+                                    </li>
+                                    <li class="switch__item">
+                                        <a class="switch__item--woman" onClick="document.bgColor='#ffc0cb'">Мимишная</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <button aria-label="Меню" class="btn-reset burger">
+                    <span class="burger__line"></span>
+                    <span class="burger__line" ></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </header>
+        <section class="main">
+            <div class="container" id="content">
+                <h1 class="main__title">Предсказатель</h1>
+                <form class="main__action">
+                    <label class="input__label">
+                        <span class="hidden input__descr">
+                            Ведите свой вопрос
+                        </span>
+                        <input class="question" type="search" placeholder="Спроси меня что хочешь и&nbsp;получешь ответ !" id="question">
+                    </label>
+                    <div class="eight-ball sound-ball" tabindex="0" id="eight-ball">
+                        <div class="answer">
+                            <p class="eight" id="eight">8</p>
+                            <p class="answer__display" id="answer"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <script src="js/script.js"></script>
+    </body>
+</html>
