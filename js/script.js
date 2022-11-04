@@ -1,4 +1,4 @@
-//we difine answers
+
 
 let answers = ["Зуб даю!", "Это точно так:)", "Без сомненья",
     "Да, верняк:)", "Забей!", "Как я вижу, да", 
@@ -10,7 +10,7 @@ let answers = ["Зуб даю!", "Это точно так:)", "Без сомн�
 // 11th string has to be considered again ()
 window.onload = function () {
     let eight = document.querySelector(".eight");
-    let answer = document.querySelector(".answer__display");
+    let answer = document.querySelector(".answer-show");
     let eightball = document.querySelector(".eight-ball")
     let question = document.querySelector(".question");
 
@@ -34,47 +34,6 @@ soundBall.addEventListener('click',
         let audio = new Audio(sound);
         audio.play();
 });
-
-//header accordion
-
-let acc = document.getElementsByClassName("accordion");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    let panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-
-//sound
-
-let manSound = document.querySelector(".switch__item--man");
-let soundHaha = "upload/ha_ha_ha.mp3";
-
-manSound.addEventListener('click',
-    function () {
-        let audioMan = new Audio(soundHaha);
-        audioMan.play();
-    }
-);
-
-
-let womanSound = document.querySelector(".switch__item--woman");
-let soundOw = "upload/Ow.mp3";
-
-womanSound.addEventListener('click',
-    function () {
-        let audioWoman = new Audio(soundOw);
-        audioWoman.play();
-    }
-);
-
 
 //burger
 
@@ -100,3 +59,39 @@ menuLinks.forEach(function(el) {
         document.body.classList.remove('stop-scroll');
     })
 });
+
+
+//sound
+let night = document.querySelector(".night");
+let soundNight = "upload/ha_ha_ha.mp3";
+
+night.addEventListener('click',
+    function () {
+        let audioNight = new Audio(soundNight);
+        audioNight.play();
+    }
+);
+
+
+let evening = document.querySelector(".evening");
+let soundEvening = "upload/Ow.mp3";
+
+evening.addEventListener('click',
+    function () {
+        let audioEvening = new Audio(soundEvening);
+        audioEvening.play();
+    }
+);
+
+let day = document.querySelector(".day");
+let soundDay = "upload/dzyn.mp3";
+
+day.addEventListener('click', 
+    function () {
+        let audioDay = new Audio(soundDay);
+        audioDay.play();
+    }
+)
+
+
+
