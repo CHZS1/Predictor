@@ -1,13 +1,19 @@
 /*glob*/
 
+::selection {
+    background-color: transparent;
+}
+
 a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 :root {
     --yellow: yellow; 
     --dark-yellow: rgb(181, 181, 7);
     --purple: rgb(129, 59, 129);
+    --black: #000000;
 }
 
 body {
@@ -26,9 +32,11 @@ li {
 }
 
 .container {
+    box-sizing: border-box;
     --offset: 15px;
     width: calc(100% - (var(--offset) * 2));
     margin: 0 auto;
+    text-align: center;
 }
 
 .flex {
@@ -47,6 +55,7 @@ li {
     font: inherit;
     color: inherit;
     background-color: transparent;
+    cursor: pointer;
 }
 
 /*header*/
@@ -86,39 +95,18 @@ li {
     margin-right: 20px;
 }
 
+.item__about {
+    position: relative;
+}
+
+.about {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+}
+
 .burger {
     display: none;
-}
-
-
-/*sound*/
-.accordion{
-    position: relative;
-} 
-
-.active, .accordion:hover {
-    color: var(--dark-yellow);
-}
-
-.panel {
-    position: absolute;
-    padding: 0 10px;
-    color: var(--dark-yellow); 
-    background-color: #fff;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.switch__item {
-    width: 100%;
-    padding: 5px 15px;
-    background-color: var(--purple);
-
-}
-
-.switch__item:not(:last-child) {
-    margin-bottom: 2px;
 }
 
 /*main*/
@@ -127,13 +115,13 @@ li {
     margin: 0 auto;
 }
 
-#content {
+/*#content {
     margin-top: 50px;
     border: 1px dotted black;
 
     text-align: center;
     font-weight: 100;
-}
+}*/
 
 .main__title {
     font-weight: 700;
@@ -164,6 +152,7 @@ li {
 
     border-color: rgba( 0, 0, 0, .1);
     box-shadow: 0 0 4px #888;
+    background-color: rgb(212, 210, 210);
     cursor: pointer;
     text-align: center;
 
@@ -185,9 +174,23 @@ li {
     outline: 2px solid rgba(76, 0, 255, .3);
 }
 
+.bearing {
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    width: 317px;
+    height: 317px;
+   
+    background-image: url(../img/b2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1000;
+}
 
 
-.eight-ball {
+.eight-ball.sound-ball {
+    position: relative;
     width: 300px;
     height: 300px;
 
@@ -197,18 +200,74 @@ li {
 
     border: 1px solid black;
     border-radius: 50%;
+    outline: none;
 
     background-color: black;
     cursor: pointer;
     transition: box-shadow .3s ease-in-out;
 }
 
+.bearing {
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    width: 317px;
+    height: 317px;
+   
+    background-image: url(../img/b2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1000;
+
+    transition: transform .3s ease-in-out;
+}
+
+
+.faq {
+    fill: var(--black);
+    transition: fill .3s ease-in-out;
+}
+
+.scull {
+    fill: var(--black);
+    transition: fill .3s ease-in-out;
+}
+
 .eight-ball:hover {
-    box-shadow: 0 0 10px rgb(76, 0, 255)
+    box-shadow: 0 0 20px rgb(76, 0, 255)
+}
+
+.eight-ball:hover .faq {
+    fill: rgb(76, 0, 255);
+}
+
+.eight-ball:hover .scull {
+    fill: rgb(76, 0, 255);
+}
+
+.eight-ball:hover .bearing {
+    transform: rotate(45deg);
+}
+
+.eight-ball:focus {
+    outline: 2px solid rgb(76, 0, 255);
 }
 
 .eight-ball:active {
-    box-shadow: 0 0 10px rgb(76, 0, 255)
+    box-shadow: 0 0 20px rgb(76, 0, 255)
+}
+
+.eight-ball:active .bearing {
+    transform: rotate(360deg);
+}
+
+.faq {
+    fill:#000000;
+}
+
+.scull {
+    fill: #000000;
 }
 
 .answer {
@@ -221,19 +280,45 @@ li {
 }
 .eight {
     margin: 20% auto;
-    font-size: 5em;
     color: white;
 }
 
-p#answer {
+.answer-show {
     padding: 25px;
     color: lightblue;
     letter-spacing: 2px;
 }
 
-#question {
-    
+.disc {
+    max-width: 290px;
+    padding-top: 20px;
 }
+
+    
+
+.link__disc {
+    color: var(--yellow);
+    outline: none;
+    transition-property: color, outline;
+    transition: .3s ease-in-out;
+}
+
+.link__disc:hover {
+    color: var(--dark-yellow);
+}
+
+.link__disc:focus {
+    border-radius: 3px;
+    outline: 2px solid var(--yellow);
+    outline-offset: 4px;
+}
+
+.link__disc:active {
+    outline: none;
+    color: var(--dark-yellow);
+}    
+
+
 
 
 
