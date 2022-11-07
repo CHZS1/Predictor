@@ -1,13 +1,13 @@
+//array of answers
 
-
-let answers = ["Зуб даю!", "Это точно так:)", "Без сомненья",
+const answers = ["Зуб даю!", "Это точно так:)", "Без сомненья",
     "Да, верняк:)", "Забей!", "Как я вижу, да", 
     "Скорей всего", "Выглядит хорошо", "Дааа!", "Знаки говорят Да",
     "Хрен его знает)", "Спроси еще раз позже", "Сейчас не скажу)",
     "Не могу предсказать сейчас", "Повтори еще разочек пжст", "Не расчитывай на это",
     "Мой ответ нет", "Хтыщььь!", "Выглядит не так хорошо", "Очень сомнительно"
 ]
-// 11th string has to be considered again ()
+
 window.onload = function () {
     let eight = document.querySelector(".eight");
     let answer = document.querySelector(".answer-show");
@@ -26,7 +26,7 @@ window.onload = function () {
 };
 
 let soundBall = document.querySelector(".sound-ball");
-let sound = "upload/sound-effect-11.mp3";
+const sound = "upload/sound-effect-11.mp3";
 
 
 soundBall.addEventListener('click',
@@ -63,7 +63,7 @@ menuLinks.forEach(function(el) {
 
 //sound
 let night = document.querySelector(".night");
-let soundNight = "upload/ha_ha_ha.mp3";
+const soundNight = "upload/ha_ha_ha.mp3";
 
 night.addEventListener('click',
     function () {
@@ -74,7 +74,7 @@ night.addEventListener('click',
 
 
 let evening = document.querySelector(".evening");
-let soundEvening = "upload/Ow.mp3";
+const soundEvening = "upload/Ow.mp3";
 
 evening.addEventListener('click',
     function () {
@@ -84,7 +84,7 @@ evening.addEventListener('click',
 );
 
 let day = document.querySelector(".day");
-let soundDay = "upload/dzyn.mp3";
+const soundDay = "upload/dzyn.mp3";
 
 day.addEventListener('click', 
     function () {
