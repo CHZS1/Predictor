@@ -21,7 +21,7 @@
         --offset: 20px;
         width: calc(100% - (var(--offset) * 2));
         padding: 10px 15px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         font-size: 15px;
     }
 
@@ -165,4 +165,10 @@
         transition: .3s ease-in-out;
     }
 
+}
+
+@media (max-width: 430px) {
+    .question {
+        padding-bottom: 24px;
+    }
 }
