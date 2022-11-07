@@ -21,7 +21,6 @@
         --offset: 20px;
         width: calc(100% - (var(--offset) * 2));
         padding: 10px 15px;
-        padding-bottom: 10px;
         font-size: 15px;
     }
 
