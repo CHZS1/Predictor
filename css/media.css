@@ -1,3 +1,5 @@
+
+
 @media (max-width: 470px) {
     .header {
         margin-bottom: 5px;
@@ -28,6 +30,22 @@
         margin-right: 10px;
     }
 
+    .question::-webkit-input-placeholder {
+        white-space: pre-wrap;
+    }
+
+    .question::-moz-placeholder {
+        white-space: pre-wrap;
+    }
+
+    .question:-ms-input-placeholder {
+        white-space: pre-wrap;
+    }
+
+    .question::-ms-input-placeholder {
+        white-space: pre-wrap;
+    }
+
     .question::placeholder {
         white-space: pre-wrap;
     }
@@ -41,6 +59,10 @@
         height: 30px;
         border: none;
         color: #000;
+
+        -webkit-transition: outline, color .3s ease-in-out;
+
+        -o-transition: outline, color .3s ease-in-out;
 
         transition: outline, color .3s ease-in-out;
     }
@@ -67,6 +89,8 @@
         top: 50%;
         left: 50%;
         background-color: currentColor;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -99,22 +123,36 @@
         z-index: 1000;
         padding: 50px;
         padding-left: 40px;
+        -webkit-box-shadow: 0 0 5px #888;
         box-shadow: 0 0 5px #888;
         background-color: #fff;
         overflow-y: auto;
         visibility: hidden;
+        -webkit-transform: translateX(-120%);
+        -ms-transform: translateX(-120%);
         transform: translateX(-120%);
+        -webkit-transition-property: visibility, -webkit-transform;
+        transition-property: visibility, -webkit-transform;
+        -o-transition-property: visibility, transform;
         transition-property: visibility, transform;
+        transition-property: visibility, transform, -webkit-transform;
+        -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
 
     .header__nav .header__list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
     .header__list {
         width: 100%;
         padding-top: 30px;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
     }
 
@@ -131,11 +169,13 @@
     }
 
     .header__nav .header__link {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .header__nav--active {
         visibility: visible;
+        -webkit-transform: none;
+        -ms-transform: none;
         transform: none;
     }
 
@@ -147,9 +187,19 @@
         z-index: 2000;
         top: 50%;
         left: 25%;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
+        -webkit-transform-origin: center;
+        -ms-transform-origin: center;
         transform-origin: center;
+        -webkit-transition-property: top, left, -webkit-transform;
+        transition-property: top, left, -webkit-transform;
+        -o-transition-property: top, left, transform;
         transition-property: top, left, transform;
+        transition-property: top, left, transform, -webkit-transform;
+        -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
 
@@ -158,9 +208,19 @@
         bottom: auto;
         top: 50%;
         left: 25%;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
+        -webkit-transform-origin: center;
+        -ms-transform-origin: center;
         transform-origin: center;
+        -webkit-transition-property: top, left, -webkit-transform;
+        transition-property: top, left, -webkit-transform;
+        -o-transition-property: top, left, transform;
         transition-property: top, left, transform;
+        transition-property: top, left, transform, -webkit-transform;
+        -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
 
@@ -169,5 +229,14 @@
 @media (max-width: 430px) {
     .question {
         padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 330px) {
+    .bearing {
+        left: -5px;
+        top: -5px;
+        width: 310px;
+        height: 310px;
     }
 }
