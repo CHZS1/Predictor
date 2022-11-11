@@ -1,4 +1,10 @@
+
+
 /*glob*/
+
+::-moz-selection {
+    background-color: transparent;
+}
 
 ::selection {
     background-color: transparent;
@@ -10,7 +16,7 @@ a {
 }
 
 :root {
-    --yellow: yellow; 
+    --yellow: yellow;
     --dark-yellow: rgb(181, 181, 7);
     --purple: rgb(129, 59, 129);
     --black: #000000;
@@ -32,7 +38,8 @@ li {
 }
 
 .container {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     --offset: 15px;
     width: calc(100% - (var(--offset) * 2));
     margin: 0 auto;
@@ -40,6 +47,8 @@ li {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -72,7 +81,11 @@ li {
 .header__link {
     color: var(--yellow);
     outline: none;
+    -webkit-transition-property: color, outline;
+    -o-transition-property: color, outline;
     transition-property: color, outline;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }
 
@@ -89,7 +102,7 @@ li {
 .header__link:active {
     outline: none;
     color: var(--dark-yellow);
-}    
+}
 
 .header__item:not(:last-child) {
     margin-right: 20px;
@@ -115,14 +128,6 @@ li {
     margin: 0 auto;
 }
 
-/*#content {
-    margin-top: 50px;
-    border: 1px dotted black;
-
-    text-align: center;
-    font-weight: 100;
-}*/
-
 .main__title {
     font-weight: 700;
     font-size: 50px;
@@ -131,11 +136,16 @@ li {
 .main__descr {
     font-weight: 500;
     font-size: 18px;
-} 
+}
 
 .main__action {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .input__descr {
@@ -145,33 +155,55 @@ li {
 .question {
     width: 400px;
     border-radius: 15px;
-    
+
     margin: 0;
     padding: 10px;
     outline: none;
 
-    border-color: rgba( 0, 0, 0, .1);
-    box-shadow: 0 0 4px #888;
-    background-color: rgb(212, 210, 210);
+    border-color: rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 4px #888;
+            box-shadow: 0 0 4px #888;
+    /*background-color: rgb(212, 210, 210);*/
+    background-color: transparent;
     cursor: pointer;
     text-align: center;
 
-    transition-property: outline, background-color;
+    -webkit-transition-property: outline, background-color, -webkit-box-shadow;
+
+    transition-property: outline, background-color, -webkit-box-shadow;
+
+    -o-transition-property: outline, background-color, box-shadow;
+
+    transition-property: outline, background-color, box-shadow;
+
+    transition-property: outline, background-color, box-shadow, -webkit-box-shadow;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }
 
 .question:hover:not(:focus-visible) {
-    background-color: rgba(76, 0, 255, .1);
+    -webkit-box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+            box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+    background-color: rgba(76, 0, 255, .5);
     color: white;
 }
 
 .question:focus {
     outline: 2px solid rgba(76, 0, 255, .3);
     outline-offset: 2px;
+    -webkit-box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+            box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+    background-color: rgba(76, 0, 255, .5);
+    color: white;
 }
 
 .question:active:not(:focus-visible) {
     outline: 2px solid rgba(76, 0, 255, .3);
+    -webkit-box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+            box-shadow: 0 0 4px rgba(76, 0, 255, .5);
+    background-color: rgba(76, 0, 255, .5);
+    color: white;
 }
 
 .bearing {
@@ -180,7 +212,7 @@ li {
     top: -9px;
     width: 317px;
     height: 317px;
-   
+
     background-image: url(../img/b2.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -204,7 +236,11 @@ li {
 
     background-color: black;
     cursor: pointer;
+    -webkit-transition: -webkit-box-shadow .3s ease-in-out;
+    transition: -webkit-box-shadow .3s ease-in-out;
+    -o-transition: box-shadow .3s ease-in-out;
     transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
 }
 
 .bearing {
@@ -213,29 +249,42 @@ li {
     top: -9px;
     width: 317px;
     height: 317px;
-   
+
     background-image: url(../img/b2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: -1000;
 
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+
+    transition: -webkit-transform .3s ease-in-out;
+
+    -o-transition: transform .3s ease-in-out;
+
     transition: transform .3s ease-in-out;
+
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 
 .faq {
     fill: var(--black);
+    -webkit-transition: fill .3s ease-in-out;
+    -o-transition: fill .3s ease-in-out;
     transition: fill .3s ease-in-out;
 }
 
 .scull {
     fill: var(--black);
+    -webkit-transition: fill .3s ease-in-out;
+    -o-transition: fill .3s ease-in-out;
     transition: fill .3s ease-in-out;
 }
 
 .eight-ball:hover {
-    box-shadow: 0 0 20px rgb(76, 0, 255)
+    -webkit-box-shadow: 0 0 20px rgb(76, 0, 255);
+            box-shadow: 0 0 20px rgb(76, 0, 255)
 }
 
 .eight-ball:hover .faq {
@@ -247,7 +296,9 @@ li {
 }
 
 .eight-ball:hover .bearing {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .eight-ball:focus {
@@ -255,15 +306,18 @@ li {
 }
 
 .eight-ball:active {
-    box-shadow: 0 0 20px rgb(76, 0, 255)
+    -webkit-box-shadow: 0 0 20px rgb(76, 0, 255);
+            box-shadow: 0 0 20px rgb(76, 0, 255)
 }
 
 .eight-ball:active .bearing {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
 }
 
 .faq {
-    fill:#000000;
+    fill: #000000;
 }
 
 .scull {
@@ -278,6 +332,7 @@ li {
     border: 1px solid #333;
     background-color: #333;
 }
+
 .eight {
     margin: 20% auto;
     color: white;
@@ -294,12 +349,14 @@ li {
     padding-top: 20px;
 }
 
-    
-
 .link__disc {
     color: var(--yellow);
     outline: none;
+    -webkit-transition-property: color, outline;
+    -o-transition-property: color, outline;
     transition-property: color, outline;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }
 
@@ -316,9 +373,6 @@ li {
 .link__disc:active {
     outline: none;
     color: var(--dark-yellow);
-}    
-
-
-
+}
 
 
