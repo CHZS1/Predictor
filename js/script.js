@@ -1,7 +1,7 @@
 //array of answers
 
 const answers = ["Зуб даю!", "Это точно так:)", "Без сомненья",
-    "Да, верняк:)", "Забей!", "Как я вижу, да", 
+    "Да, верняк:)", "Забей!", "Как я вижу, да",
     "Скорей всего", "Выглядит хорошо", "Дааа!", "Знаки говорят Да",
     "Хрен его знает)", "Спроси еще раз позже", "Сейчас не скажу)",
     "Не могу предсказать сейчас", "Повтори еще разочек пжст", "Не расчитывай на это",
@@ -23,6 +23,8 @@ window.onload = function () {
             answer.innerText = answers[num];
         }
     });
+
+    alert("Чтобы узнать будущее, введите свой вопрос и нажмите на иконку вопроса");
 };
 
 let soundBall = document.querySelector(".sound-ball");
@@ -33,7 +35,7 @@ soundBall.addEventListener('click',
     function () {
         let audio = new Audio(sound);
         audio.play();
-});
+    });
 
 //burger
 
@@ -52,8 +54,8 @@ burger.addEventListener('click',
 
     })
 
-menuLinks.forEach(function(el) {
-    el.addEventListener('click', function() {
+menuLinks.forEach(function (el) {
+    el.addEventListener('click', function () {
         burger.classList.remove('burger--active');
         menu.classList.remove('header__nav--active');
         document.body.classList.remove('stop-scroll');
@@ -86,7 +88,7 @@ evening.addEventListener('click',
 let day = document.querySelector(".day");
 const soundDay = "upload/dzyn.mp3";
 
-day.addEventListener('click', 
+day.addEventListener('click',
     function () {
         let audioDay = new Audio(soundDay);
         audioDay.play();
